@@ -1,0 +1,5 @@
+<library path="lib/libjoy_to_twist_nodelet">
+  <class name="joy_to_twist/joy_to_twist_nodelet" type="joy_to_twist::joy_to_twist_nodelet" base_class_type="nodelet::Nodelet">
+    <description>Twist given Joy messages</description>
+  </class>
+</library>
