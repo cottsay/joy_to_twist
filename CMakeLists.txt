@@ -75,7 +75,9 @@ add_library(joy_to_twist_nodelet
 )
 
 ## Declare a cpp executable
-# add_executable(joy_to_twist_node src/joy_to_twist_node.cpp)
+add_executable(joy_to_twist_node
+  src/joy_to_twist_node.cpp
+)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -84,6 +86,10 @@ add_library(joy_to_twist_nodelet
 ## Specify libraries to link a library or executable target against
 target_link_libraries(joy_to_twist
   ${catkin_LIBRARIES}
+)
+target_link_libraries(joy_to_twist_node
+  ${catkin_LIBRARIES}
+  joy_to_twist
 )
 target_link_libraries(joy_to_twist_nodelet
   ${catkin_LIBRARIES}
@@ -105,7 +111,7 @@ target_link_libraries(joy_to_twist_nodelet
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS joy_to_twist joy_to_twist_nodelet
+install(TARGETS joy_to_twist joy_to_twist_node joy_to_twist_nodelet
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
